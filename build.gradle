@@ -2,7 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.2.3'
 	id 'io.spring.dependency-management' version '1.1.4'
-	id 'com.google.cloud.tools.jib' version '3.1.4'
+	id 'com.google.cloud.tools.jib' version '3.4.1'
 }
 
 group = 'com.nwhite'
@@ -17,13 +17,7 @@ repositories {
 }
 
 jib {
-	from {
-		image = 'adoptopenjdk/openjdk17'
-	}
-	to {
-		image = 'nicholas2208/kaggle-app'
-		tags = ['latest']
-	}
+	jib.to.image = 'nicholas2208/kaggle-app'
 }
 
 dependencies {
